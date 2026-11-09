@@ -236,7 +236,10 @@ return <>
             Conoce a tu maestro
           </h2>
 <p className="font-body-lg text-body-lg text-[#172033] leading-relaxed">
-            ¡Hola! Soy Joshua Cirilo, tu maestro de inglés. En mis clases combinamos conversación, lecturas cortas y ejercicios de gramática. Por ejemplo, cuando aprendemos el pasado, lo usamos para contar qué hiciste el fin de semana. Quiero que cada tema te sirva para decir algo que de verdad quieras contar.
+            <strong>¡Hola! Soy Joshua Cirilo, tu maestro de inglés.</strong> Estudio en línea la carrera de <em>Software Development</em> en Brigham Young University–Idaho (BYU–Idaho), una universidad de Estados Unidos. En 2024 acredité mi dominio del inglés mediante el examen <strong>TOEFL iBT</strong>.
+          </p>
+<p className="font-body-lg text-body-lg text-[#172033] leading-relaxed">
+            Uso el inglés a diario en la universidad y en mi trabajo como desarrollador de software. Si estás empezando, practicaremos cómo presentarte, hacer preguntas y hablar de tu día. Si ya tienes una base, trabajaremos en cómo contar tus experiencias y expresar tus ideas con más confianza.
           </p>
 
 <div className="p-space-lg bg-white rounded-2xl border-l-4 border-[#FFE43B] shadow-sm">
