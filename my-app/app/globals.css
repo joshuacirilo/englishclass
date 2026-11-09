@@ -1,26 +1,167 @@
 @import "tailwindcss";
 
+.typewriter { display: inline-grid; white-space: nowrap; vertical-align: baseline; background: linear-gradient(transparent 77%, #ffe43b 77%); }
+.typewriter-sizer, .typewriter-text { grid-area: 1 / 1; }
+.typewriter-sizer { visibility: hidden; padding-right: .16em; }
+.typewriter-cursor { display: inline-block; width: .045em; height: .85em; margin-left: .06em; background: currentColor; vertical-align: -.04em; animation: typewriter-blink 1s step-end infinite; }
+@keyframes typewriter-blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .typewriter-cursor { animation: none; display: none; }
+}
+
+@theme {
+  --color-on-primary-container: #7f879f;
+  --color-outline: #76777d;
+  --color-on-tertiary: #ffffff;
+  --color-surface-container-high: #dce9ff;
+  --color-on-background: #0d1c2e;
+  --color-on-surface: #0d1c2e;
+  --color-on-tertiary-fixed: #151d21;
+  --color-surface: #f8f9ff;
+  --color-surface-dim: #ccdbf3;
+  --color-tertiary-fixed: #dce3e9;
+  --color-on-primary-fixed: #121b2e;
+  --color-primary-fixed-dim: #bdc6e0;
+  --color-surface-container: #e6eeff;
+  --color-background: #f8f9ff;
+  --color-surface-variant: #d5e3fc;
+  --color-primary-fixed: #d9e2fc;
+  --color-surface-tint: #555e74;
+  --color-inverse-primary: #bdc6e0;
+  --color-surface-container-highest: #d5e3fc;
+  --color-tertiary-container: #1a2125;
+  --color-surface-container-low: #eff4ff;
+  --color-error: #ba1a1a;
+  --color-tertiary-fixed-dim: #c0c7cd;
+  --color-on-primary-fixed-variant: #3e475b;
+  --color-on-error: #ffffff;
+  --color-primary: #01081a;
+  --color-inverse-surface: #233144;
+  --color-on-secondary-fixed: #211c00;
+  --color-tertiary: #04090d;
+  --color-secondary-fixed-dim: #e0c717;
+  --color-on-error-container: #93000a;
+  --color-secondary-fixed: #fee33a;
+  --color-on-secondary: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-bright: #f8f9ff;
+  --color-secondary: #6c5e00;
+  --color-outline-variant: #c6c6cd;
+  --color-on-tertiary-fixed-variant: #40484d;
+  --color-on-primary: #ffffff;
+  --color-on-secondary-fixed-variant: #514700;
+  --color-on-tertiary-container: #81898e;
+  --color-secondary-container: #fbe037;
+  --color-inverse-on-surface: #eaf1ff;
+  --color-error-container: #ffdad6;
+  --color-on-surface-variant: #45474c;
+  --color-primary-container: #172033;
+  --color-on-secondary-container: #706300;
+  --spacing-space-xl: 2.5rem;
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-2xl: 4rem;
+  --spacing-gutter: 1.5rem;
+  --spacing-margin-mobile: 1.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-margin: 3rem;
+  --spacing-gutter-mobile: 1rem;
+  --spacing-space-md: 1rem;
+  --font-label-lg: var(--font-jakarta), Arial, sans-serif;
+  --font-headline-md: var(--font-jakarta), Arial, sans-serif;
+  --font-headline-lg: var(--font-jakarta), Arial, sans-serif;
+  --font-body-lg: var(--font-jakarta), Arial, sans-serif;
+  --font-label-sm: var(--font-jakarta), Arial, sans-serif;
+  --font-body-md: var(--font-jakarta), Arial, sans-serif;
+  --font-headline-lg-mobile: var(--font-jakarta), Arial, sans-serif;
+  --font-headline-sm: var(--font-jakarta), Arial, sans-serif;
+  --font-body-sm: var(--font-jakarta), Arial, sans-serif;
+  --font-headline-xl-mobile: var(--font-jakarta), Arial, sans-serif;
+  --font-label-md: var(--font-jakarta), Arial, sans-serif;
+  --font-headline-xl: var(--font-jakarta), Arial, sans-serif;
+  --text-label-lg: 1rem;
+  --text-label-lg--line-height: 1.25rem;
+  --text-label-lg--letter-spacing: 0.01em;
+  --text-label-lg--font-weight: 700;
+  --text-headline-md: 1.75rem;
+  --text-headline-md--line-height: 2.25rem;
+  --text-headline-md--letter-spacing: -0.01em;
+  --text-headline-md--font-weight: 700;
+  --text-headline-lg: 2.5rem;
+  --text-headline-lg--line-height: 3rem;
+  --text-headline-lg--letter-spacing: -0.02em;
+  --text-headline-lg--font-weight: 700;
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.85rem;
+  --text-body-lg--font-weight: 400;
+  --text-label-sm: 0.75rem;
+  --text-label-sm--line-height: 1rem;
+  --text-label-sm--letter-spacing: 0.04em;
+  --text-label-sm--font-weight: 600;
+  --text-body-md: 1rem;
+  --text-body-md--line-height: 1.65rem;
+  --text-body-md--font-weight: 400;
+  --text-headline-lg-mobile: 1.75rem;
+  --text-headline-lg-mobile--line-height: 2.25rem;
+  --text-headline-lg-mobile--letter-spacing: -0.015em;
+  --text-headline-lg-mobile--font-weight: 700;
+  --text-headline-sm: 1.25rem;
+  --text-headline-sm--line-height: 1.75rem;
+  --text-headline-sm--letter-spacing: 0em;
+  --text-headline-sm--font-weight: 600;
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.45rem;
+  --text-body-sm--font-weight: 400;
+  --text-headline-xl-mobile: 2.25rem;
+  --text-headline-xl-mobile--line-height: 2.75rem;
+  --text-headline-xl-mobile--letter-spacing: -0.02em;
+  --text-headline-xl-mobile--font-weight: 800;
+  --text-label-md: 0.875rem;
+  --text-label-md--line-height: 1.125rem;
+  --text-label-md--letter-spacing: 0.02em;
+  --text-label-md--font-weight: 600;
+  --text-headline-xl: 3.5rem;
+  --text-headline-xl--line-height: 4.25rem;
+  --text-headline-xl--letter-spacing: -0.03em;
+  --text-headline-xl--font-weight: 800;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --lava-cream: #faf9f5;
+  --lava-yellow: #ffe43b;
+  --lava-blue: #d5e3fc;
+  --lava-mist: #eaf1f7;
 }
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+body { margin: 0; background: var(--lava-cream); color: #172033; font-family: var(--font-jakarta), Arial, sans-serif; }
+a:focus-visible { outline: 3px solid #6c5e00; outline-offset: 5px; }
+.skip-link { position: fixed; top: -5rem; left: 1rem; z-index: 100; padding: 1rem; background: white; border-radius: .5rem; }
+.skip-link:focus { top: 1rem; }
+.material-symbols-outlined { font-family: "Material Symbols Outlined"; font-weight: normal; font-style: normal; line-height: 1; letter-spacing: normal; text-transform: none; display: inline-block; white-space: nowrap; font-feature-settings: "liga"; -webkit-font-smoothing: antialiased; }
+.lava-hero { isolation: isolate; }
+.lava-background { position: absolute; inset: 0; overflow: hidden; pointer-events: none; background: var(--lava-cream); }
+.lava-blobs { position: absolute; inset: -10%; filter: blur(34px); }
+.lava-blob { position: absolute; width: clamp(280px, 46vw, 700px); height: 70%; min-height: 320px; border-radius: 42% 58% 65% 35% / 45% 38% 62% 55%; opacity: .65; animation: lava-rise 24s ease-in-out infinite alternate; }
+.lava-blob-one { background: var(--lava-yellow); right: -9%; bottom: -12%; animation-delay: -8s; }
+.lava-blob-two { background: var(--lava-blue); right: 4%; top: -12%; animation-duration: 29s; animation-delay: -18s; }
+.lava-blob-three { background: var(--lava-yellow); left: -12%; top: 4%; opacity: .3; animation-duration: 32s; animation-delay: -12s; }
+.lava-blob-four { background: var(--lava-blue); left: 6%; bottom: -18%; animation-duration: 26s; animation-delay: -20s; }
+.lava-blob-five { background: var(--lava-yellow); right: 20%; top: 24%; width: clamp(150px, 22vw, 340px); opacity: .25; animation-duration: 21s; animation-delay: -5s; }
+.lava-background::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #faf9f56b, #faf9f524 75%); }
+@keyframes lava-rise {
+  0% { transform: translate3d(-4%, 14%, 0) rotate(-12deg) scale(.95); border-radius: 42% 58% 65% 35% / 45% 38% 62% 55%; }
+  50% { transform: translate3d(10%, -16%, 0) rotate(20deg) scale(1.12, .92); border-radius: 65% 35% 40% 60% / 35% 62% 38% 65%; }
+  100% { transform: translate3d(-10%, -38%, 0) rotate(-8deg) scale(.94, 1.12); border-radius: 35% 65% 55% 45% / 60% 40% 60% 40%; }
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@media (max-width: 640px) {
+  .lava-blobs { filter: blur(24px); }
+  .lava-blob { opacity: .4; }
+  header a > span.font-body-md { display: block; font-size: .75rem; }
+  .text-headline-xl { font-size: 2.25rem; line-height: 1.2; }
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .lava-blob { animation: none; }
+  *, *::before, *::after { transition-duration: 0s !important; }
 }
